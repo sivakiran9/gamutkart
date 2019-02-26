@@ -8,13 +8,6 @@ pipeline {
                    checkout scm
                 }
                 }
-          stage('Build') {
-          steps {
-
-                         sh('/home/siva/distros/apache-maven-3.6.0/bin/mvn install')
-          }
-          }
-
 
           stage('Shutdown'){
           steps {
@@ -26,7 +19,14 @@ pipeline {
                     sh 'rm -rf home/satya/distros/apache-tomcat-8.5.38/webapps/gamutkart.war'
 
           }
-          } 
+          }
+          stage('Build') {
+          steps {
+
+                         sh('/home/siva/distros/apache-maven-3.6.0/bin/mvn install')
+          }
+          }
+ 
 
 
           stage('Deployment') {
