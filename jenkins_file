@@ -18,7 +18,8 @@ pipeline {
           }
            stage('Delete'){
            steps {
-                    sh '/home/siva/.jenkins/workspace/jenkins_file/target/rm -rf gamutkart.war'
+                    sh 'satya@172.17.0.2:/home/satya/distros/apache-tomcat-8.5.38/webapps/rm -rf gamutkart.war'
+
           }
           }  
  
