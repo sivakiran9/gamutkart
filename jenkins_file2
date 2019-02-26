@@ -14,9 +14,17 @@ pipeline {
                          sh('/home/siva/distros/apache-maven-3.6.0/bin/mvn install')
            }
           }
- 
+          stage('Shutdown'){
+          steps {
+                    sh 'sshpass -p "123" ssh satya@172.17.0.3 "JAVA_HOME=/home/satya/distros/jdk1.8.0_201"  "/home/satya/distros/apache-tomcat-8.5.38/bin/shutdown.sh"'
+          }
+          }
+          stage('Delete'){
+          steps {
+                    sh 'rm -rf home/satya/distros/apache-tomcat-8.5.38/webapps/gamutkart.war'
 
-
+          }
+          }
           stage('Deployment') {
           steps {
                  sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.3:/home/satya/distros/apache-tomcat-8.5.38/webapps'
