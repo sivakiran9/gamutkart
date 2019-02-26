@@ -17,7 +17,7 @@ pipeline {
           }
            stage('Delete'){
            steps {
-                    sh 'satya@172.17.0.2: rm -rf home/satya/distros/apache-tomcat-8.5.38/webapps/gamutkart.war'
+                    sh 'rm -rf home/satya/distros/apache-tomcat-8.5.38/webapps/gamutkart.war'
 
           }
           }  
