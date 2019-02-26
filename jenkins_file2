@@ -1,4 +1,3 @@
-
 pipeline {
         agent any
 
@@ -9,7 +8,7 @@ pipeline {
                    checkout scm
                 }
                 }
-               stage('Build') {
+          stage('Build') {
           steps {
 
                          sh('/home/siva/distros/apache-maven-3.6.0/bin/mvn install')
@@ -51,4 +50,5 @@ pipeline {
        }
 ~                                                                                                                                                                                                                                                                                                                                                                                                                    
 ~                                                                                                                                                                                                                                                                                                                                                                                                                    
+
 ~                                  
