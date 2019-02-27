@@ -2,11 +2,9 @@
 
         agent { label 'my-defined-label' }
 
-
-        A choice parameter, for example: parameters { choice(name: 'ENVIRONMENT', choices: ['QA', 'SIT'], description: '') }
-
-
           stages{
+          
+          A choice parameter, for example: parameters { choice(name: 'ENVIRONMENT', choices: ['QA', 'SIT'], description: '') }
         
           stage('Checkout') {
           steps {
