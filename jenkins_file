@@ -1,5 +1,10 @@
  pipeline {
-        agent any
+
+        agent { label 'my-defined-label' }
+
+
+        A choice parameter, for example: parameters { choice(name: 'ENVIRONMENT', choices: ['QA', 'SIT'], description: '') }
+
 
           stages{
         
@@ -16,17 +21,27 @@
           }
           stage('Deployment') {
           steps {
+                 if [ $ENVIRONMENT = "QA" ];then
                  sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.2:/home/satya/distros/apache-tomcat-8.5.38/webapps'
-   
-     
-          }
-         }
          stage('Startup') {
          steps {
                 sh 'sshpass -p "123" ssh satya@172.17.0.2 "JAVA_HOME=/home/satya/distros/jdk1.8.0_201"  "/home/satya/distros/apache-tomcat-8.5.38/bin/startup.sh"'
-         
-         
-        
+         }
+         }
+         }
+         } 
+
+         stage('Deployment') {
+         steps {
+                elif [ $ENVIRONMENT = "SIT" ];then
+               sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.3:/home/satya/distros/apache-tomcat-8.5.38/webapps'
+         stage('Startup') {
+         steps {
+         sh 'sshpass -p "123" ssh satya@172.17.0.3 "JAVA_HOME=/home/satya/distros/jdk1.8.0_201" "/home/satya/distros/apache-tomcat-8.5.38/bin/startup.sh"' 
+
+         fi
+         }
+         }
          }
          }
         }
