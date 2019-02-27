@@ -1,12 +1,10 @@
  pipeline {
 
-        agent { label 'my-defined-label' }
+         agent { label 'slave1' }
+         parameters { choice(name: 'ENVIRONMENT', choices: ['QA', 'SIT'], description: '') }
 
           stages{
-          stage('Parameters')
-          steps { 
-          sh parameters { choice(name: 'ENVIRONMENT', choices: ['QA', 'SIT'], description: '') }
-           }
+           
 
           stage('Checkout') {
           steps {
