@@ -19,7 +19,7 @@ pipeline {
                  }
                  stage('Startup') {
 			steps {
-			   sh 'sshpass -p "123" ssh satya@172.17.0.3 JAVA_HOME=/home/satya/distros/jdk1.8.0_201 /home/satya/distros/apache-tomcat-8.5.39/bin/startup.sh' 
+			   sh 'sshpass -p "123" ssh -o StrictHostKeyChecking=no satya@172.17.0.3 JAVA_HOME=/home/satya/distros/jdk1.8.0_201 /home/satya/distros/apache-tomcat-8.5.39/bin/startup.sh' 
                  }
                  }
                  }
