@@ -14,7 +14,7 @@
           stage('Build') {
           steps {
 
-                         sh('/home/satya/distros/apache-maven-3.6.1/bin/mvn install')
+                         sh('/home/siva/distros/apache-maven-3.6.1/bin/mvn install')
           }
           }
           stage('Deployment') {
