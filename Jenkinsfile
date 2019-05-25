@@ -15,11 +15,11 @@ pipeline {
                 }
                 stage('Deployment') {
                       steps {
-                            sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.3:/home/satya/distros/apache-tomcat-8.5.39/webapps'                    }
+                            sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.2:/home/satya/distros/apache-tomcat-8.5.39/webapps'                    }
                  }
                  stage('Startup') {
 			steps {
-			   sh 'sshpass -p "123" ssh -o StrictHostKeyChecking=no satya@172.17.0.3 JAVA_HOME=/home/satya/distros/jdk1.8.0_201 /home/satya/distros/apache-tomcat-8.5.39/bin/startup.sh' 
+			   sh 'sshpass -p "123" ssh -o StrictHostKeyChecking=no satya@172.17.0.2 JAVA_HOME=/home/satya/distros/jdk1.8.0_201 /home/satya/distros/apache-tomcat-8.5.39/bin/startup.sh' 
                  }
                  }
                  }
