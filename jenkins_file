@@ -14,7 +14,7 @@
           stage('Build') {
           steps {
 
-                         sh('JAVA_HOME=/home/satya/distros/jdk1.8.0_201/bin/java \ /home/satya/distros/apache-maven-3.6.0/bin/mvn install')
+                         sh('JAVA_HOME=/home/satya/distros/jdk1.8.0_201  /home/satya/distros/apache-maven-3.6.0/bin/mvn install')
           }
           }
           stage('Deployment') {
