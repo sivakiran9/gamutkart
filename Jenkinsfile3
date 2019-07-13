@@ -11,8 +11,7 @@ pipeline {
                                 sh ('/usr/share/maven/bin/mvn install')
                 }
                 }
-           }
-         stage('Deployment') {
+                stage('Deployment') {
                       steps {
                             sh 'sshpass -p "123" scp target/gamutkart.war satya@172.17.0.2:/home/satya/distros/apache-tomcat-8.5.39/webapps'                    }
                  }
@@ -22,4 +21,5 @@ pipeline {
                  }
                  }
                  }
-           
+           }
+
