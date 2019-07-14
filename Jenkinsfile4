@@ -1,0 +1,7 @@
+pipeline {
+    agent {
+        docker { 'kiran787/mvn:latest' }
+              
+        } 
+   
+       }
