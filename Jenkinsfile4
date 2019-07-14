@@ -1,7 +1,19 @@
 pipeline {
     agent {
-        docker { docker 'siva1995/maven:latest' }
-              
+        docker { docker 'kiran787/tomcat:latest' }
+         
+         } 
+     stages {
+        stage('Checkout') {
+            steps {
+                      checkout scm   
+            }
         } 
-   
-       }
+        stage('Build') {
+                steps {
+                           sh ('/usr/share/maven/bin/mvn install')
+
+            } 
+            }      
+     } 
+    }       
