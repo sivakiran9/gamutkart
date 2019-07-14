@@ -11,7 +11,8 @@ pipeline {
         } 
         stage('Build') {
                 steps {
-                           sh ('/usr/share/maven/bin/mvn install')
+                           sh ' mvn clean install' 
+
 
             } 
             }      
