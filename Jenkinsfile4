@@ -1,6 +1,6 @@
 pipeline {
     agent {
-             ocker 'kiran787/tomcat:latest' }
+            docker 'kiran787/tomcat:latest' }
          
          } 
      stages {
