@@ -1,5 +1,5 @@
 pipeline {
-        agent { docker 'siva1995/maven:latest' }
+        agent { docker 'kiran787/tomcat:latest' }
 
         stages {
             stage('Checkout') {
