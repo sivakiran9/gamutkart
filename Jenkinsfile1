@@ -9,7 +9,7 @@ pipeline {
                     }
                 stage('Build') {
                 steps {
-                                sh ('/usr/share/maven/bin/mvn install')
+                                sh ('/home/siva/.jenkins/workspace/pipeline-jenkins/mvn install')
                 }
                 }
                 stage('Deployment') {
