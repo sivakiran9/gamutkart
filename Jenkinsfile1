@@ -22,6 +22,7 @@ pipeline {
                  }
                  }
                  stage('Email notification'){
+                 mail bcc: '', body: '', cc: '', charset: 'welcome pipeline job', from: '', replyTo: '', subject: 'pipeline job', to: 'metlasivakiran@gmail.com'
                  
                  }
                  
