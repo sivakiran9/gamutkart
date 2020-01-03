@@ -27,5 +27,16 @@
 		<finalName>gamutkart</finalName>
 	</build>
 	
+	
+<distributionManagement>
+	
+	<repository>
+		<id>nexus_repo</id>
+		<name>nexus_repo</name>
+		<url>http://172.17.0.2:8081/repository/nexus_repo/</url>
+        </repository>
+</distributionManagement>
+	
+	
 </project>
 
