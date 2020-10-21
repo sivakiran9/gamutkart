@@ -6,7 +6,7 @@ pipeline {
                 steps {
                        sh '''
                        rm -rf *
-                        git clone https://sivakiran9:Siva__787@github.com/sivakiran9/gamutkart.git
+                        git clone https://sivakiran9:pass@github.com/sivakiran9/gamutkart.git
 
                         '''
                                                        }
